@@ -1,0 +1,38 @@
+name: Linux
+
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'extras/images/**'
+
+jobs:
+  build:
+    name: ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+        - {
+            name: "Ubuntu Latest",
+            os: ubuntu-latest
+          }
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Python Requirements
+        run: python3 -m pip install -r requirements.txt --user
+
+      - name: Verify
+        run: python3 --version
+
+      - name: Test
+        run: conan --version
