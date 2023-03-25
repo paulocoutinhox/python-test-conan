@@ -4,6 +4,8 @@
 
 [![Linux](https://github.com/paulocoutinhox/python-test-conan/actions/workflows/linux.yml/badge.svg)](https://github.com/paulocoutinhox/python-test-conan/actions/workflows/linux.yml)
 
+[![Windows](https://github.com/paulocoutinhox/python-test-conan/actions/workflows/windows.yml/badge.svg)](https://github.com/paulocoutinhox/python-test-conan/actions/workflows/windows.yml)
+
 Test conan installation and Python discover.
 
 # Test
